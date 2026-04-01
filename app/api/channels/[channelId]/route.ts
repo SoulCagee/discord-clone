@@ -3,7 +3,7 @@ import { db } from "@/lib/db";
 import { MemberRole } from "@/lib/generated/prisma";
 import { NextResponse } from "next/server";
 
-export async function DELETE(req:Request , { params } : { params : {channelId : string} }) {
+export async function DELETE(req:Request , { params } : { params : Promise<{ channelId: string }> }) {
     try{
         const profile = await currentProfile();
         const { searchParams } = new URL(req.url);
@@ -53,7 +53,7 @@ export async function DELETE(req:Request , { params } : { params : {channelId : 
     }
 }
 
-export async function PATCH(req:Request , { params } : { params : {channelId : string} }) {
+export async function PATCH(req:Request ,{ params }: { params: Promise<{ channelId: string }> }) {
     try{
         const profile = await currentProfile();
         const { name , type } = await req.json()

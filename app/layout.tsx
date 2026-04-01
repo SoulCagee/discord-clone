@@ -34,7 +34,9 @@ export default function RootLayout({
           'bg-white dark:bg-[#313338]'
         )}
       >
-        <ClerkProvider>
+        <ClerkProvider
+          afterSignOutUrl={'/'}
+        >
           <ThemeProvider
             attribute='class'
             defaultTheme="dark"

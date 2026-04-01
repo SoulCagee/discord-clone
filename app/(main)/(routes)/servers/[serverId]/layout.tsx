@@ -8,7 +8,7 @@ const ServerIdLayout = async ({
     params
 }:{
     children:React.ReactNode;
-    params : {serverId : string}
+    params : Promise<{ serverId: string }>
 }) =>{
 
     const profile = await currentProfile();
