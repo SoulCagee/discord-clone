@@ -1,3 +1,4 @@
+/* @import "uploadthing/tw/v4"; */
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
@@ -127,3 +128,10 @@
     @apply font-sans;
   }
 }
+
+html,
+body,
+:root{
+  height: 100%;
+}
+
